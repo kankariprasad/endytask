@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Naresh | Technology</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.2/css/fontawesome.min.css">
+    <style>
+        section{
+            height: 1025px;
+            width: 100px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+ body{
+    min-height: 50vh;
+    width: 100%;
+    background-position: center;
+    background-image: linear-gradient((rgba(14, 16, 25, 0.7),rgba(4,9,30,0.7)));
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    background-color: #fff;
+}
+nav{
+    display: flex;
+    padding: 1% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width: 200px;
+
+}
+span{
+    color: #fff;
+    padding-right: 20px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    color: aliceblue;
+    text-decoration:solid;
+    font-size: 15px;
+}
+.nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px; ;
+    background: #f00189;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+    
+}
+.text-box{
+    width: 90%;
+    color: #fff000;
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.text-box h1{
+    font-size: 55px;
+    color: #fff;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 20px;
+    color: #fff;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.999);
+    border: 1px solid rgb(13, 255, 0);
+    padding: 12px 30px;
+    font-size: 13px;
+    background: transparent;
+     position: relative;
+}
+.hero-btn:hover{
+    border: 1px solid #000000;
+    background: #000000;
+    transition: 0.4s;
+}
+nav .fa{
+    display: none;
+}
+.course{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 40px;
+}
+.course h1{
+    font-size: 35px;
+    font-weight: 600;
+}
+.course p{
+    color: rgb(7, 7, 7);
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 20px;
+    padding: 10px;
+}
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 20%;
+    background: #f2f4d9;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 1.2s;
+}
+.course-col img{
+    column-width: 30px;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 5px 0;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(17, 16, 16, 0.693);
+    transition: 0.5s;
+}
+@media(max-width:700px){
+    .row{
+        flex-direction:column;
+    }
+}
+
+
+
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5px;
+    margin-bottom: 1%;
+}
+.campus h1{
+    font-size: 35px;
+    font-weight: 600;
+}
+.campus-col{
+    flex-basis: 20%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    justify-content: space-between;
+}
+.campus-col img{
+    width: 100%;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.7s;
+}
+.layer:hover{
+    background: #04676c8b;
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <section>
+    
+        <body background="../src/naresh/naresh bnner.jpg">
+        </body>
+        <body>
+            <section class="header">
+                <nav>
+                    <a href=".NET HTML"><img src="../src/naresh/Nareshit-Logo-Png.png"></a>
+                    <div class="nav-links">
+                        
+                        <ul>
+                                <span class="bi bi-person">&nbsp; Login</span>
+                               <li><a href="">HOME</a></li>
+                               <li><a href="">ABOUT</a></li>
+                               <li><a href="">COURSE</a></li>
+                               <li><a href="">BLOG</a></li>
+                               <li><a href="">CONTACT</a></li>
+                            
+                        </ul>
+                    </div>
+                  
+                </nav>
+                <div class="text-box">
+                    <h1>India's No.1 Software Training Institute</h1>
+                    <p> The Place where Design your life in a organized manner that easiest thing in the World.<br><br>
+                        All the Resources in your Hand, Lets make it Beautiful 
+                        then<br> Why are you waiting for ..Lets go on..
+                    </p>
+                    <a href="" class="hero-btn">Visit us to know more</a>
+                </div>
+            </section>
+
+            <!-----------------------------------------course---------------------------------->
+
+
+        <section class="course">
+            <h1>Our Course</h1>
+            <p> Enroll now ,your bright future is here make a right decision.. </p>
+            
+            <div class="row">
+                <div class="course-col">
+                    <a href=".NET HTML"><img src="../src/naresh/classroom.png"></a>
+                    <h3>CLASSROOM TRAINING</h3>
+                    <p>IPE full form in English is the Institute of Public Enterprise. It is one of the premium management institutes in the country. The institute is known to offer full-time and part-time management courses in different specialisations.</p>
+                </div>
+            
+
+            <div class="course-col">
+                <a href=".NET HTML"><img src="../src/naresh/Online-training.png"></a>
+                <h3>ONLINE TRAINING</h3>
+                <p>IPE full form in English is the Institute of Public Enterprise. It is one of the premium management institutes in the country. The institute is known to offer full-time and part-time management courses in different specialisations.</p>
+            </div>
+
+            <div class="course-col">
+                <a href=".NET HTML"><img src="../src/naresh/software-industry-1.png"></a>
+                <h3>CORPORATE TRAINING</h3>
+                <p>IPE full form in English is the Institute of Public Enterprise. It is one of the premium management institutes in the country. The institute is known to offer full-time and part-time management courses in different specialisations.</p>
+            </div>
+            <div class="course-col">
+                <a href=".NET HTML"><img src="../src/naresh/weekends.png"></a>
+                <h3>WEEKEND TRAINING</h3>
+                <p>IPE full form in English is the Institute of Public Enterprise. It is one of the premium management institutes in the country. The institute is known to offer full-time and part-time management courses in different specialisations.</p>
+            </div>
+            </div>
+<hr>
+
+
+            <section class="campus">
+                <h1>Our Global Campus</h1>
+                <p>Here you have bright future ,Decide your future with single step.</p>
+                <div class="row">
+                    <div class="campus-col">
+                        <img src="../src/images/london.png">
+                        <div class="layer">
+                            <h3>CHENNAI</h3>
+                        </div>
+                    </div>
+                    <div class="campus-col">
+                        <img src="../src/naresh/naresh it new.jpg" >
+                        <div class="layer">
+                            <h3>HYDERABAD</h3>
+                            </div>
+                        </div>
+                        <div class="campus-col">
+                            <img src="../src/images/newyork.png">
+                            <div class="layer">
+                                <h3>NEW YORK</h3>
+                                </div>
+                            </div>
+
+                        <div class="campus-col">
+                            <img src="../src/images/INDIA_11zon.jpg">
+                            <div class="layer">
+                                <h3>UNITED STATES</h3>
+                                </div>
+                            </div>
+                </div>
+            </section>
+
+        </section>
+
+        
+            
+    
+    </section>
+</body>
+</html>

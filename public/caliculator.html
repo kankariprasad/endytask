@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <style>
+        #lblAmount {
+            border:1px solid black;
+            width: 100px;
+            height: 20px;
+        }
+        #lblYear {
+            border:1px solid black;
+            width: 40px;
+            height: 20px;
+        }
+        #lblRate {
+            border:1px solid black;
+            width: 40px;
+            height: 20px;
+        }
+        span {
+            padding: 2px;
+        }
+        input[type="range"] {
+            width: 100px;
+        }
+    </style>
+    <script>
+        function bodyload(){
+            document.getElementById("lblAmount").innerHTML = `&#8377; 340000`;
+            document.getElementById("lblYear").innerHTML = `3`;
+            document.getElementById("lblRate").innerHTML = `12.5`;
+        }
+        function AmountChange(){
+            document.getElementById("lblAmount").innerHTML =
+             "&#8377;" + document.getElementById("rangeAmount").value;
+
+        }
+        function YearChange(){
+            document.getElementById("lblYear").innerHTML =
+            document.getElementById("rangeYear").value;
+        }
+        function RateChange(){
+            document.getElementById("lblRate").innerHTML =
+            document.getElementById("rangeRate").value;
+        }
+        function CalculateClick(){
+            var P = parseFloat(document.getElementById("rangeAmount").value);
+            var r = parseFloat(document.getElementById("rangeRate").value)/12/100;
+            var n = parseInt(document.getElementById("rangeYear").value) * 12;
+            var EMI =  P * r / (1- (Math.pow(1/(1 + r), n)));
+            document.getElementById("lblEmi").innerHTML = `<b><font size="6"> &#8377; ${Math.round(EMI)} </font></b>`
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <div class="border border-4 p-3 mt-2">
+        <div class="row">
+            <div class="col">
+                Amount you need : <span id="lblAmount">&nbsp;</span>
+            </div>
+            <div class="col">
+                for <span id="lblYear"></span> years
+            </div>
+            <div class="col">
+                Interest rate <span id="lblRate"></span> %
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col">
+                <div class="input-group">
+                    <span>&#8377; 50,000/-</span>
+                    <input type="range" id="rangeAmount" onchange="AmountChange()" min="50000" max="1000000" value="50000" class="form-range">
+                    <span>&#8377; 10,00,000/-</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span>1</span>
+                    <input type="range" id="rangeYear" onchange="YearChange()" min="1" max="5" value="1" class="form-range">
+                    <span>5</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="input-group">
+                    <span>10.00</span>
+                    <input type="range" id="rangeRate" onchange="RateChange()" min="10.00" max="18.00" step="0.1" value="10.00" class="form-range">
+                    <span>18.00</span>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col text-end">
+                <button onclick="CalculateClick()" class="btn btn-primary">Calculate</button>
+            </div>
+        </div>
+    </div>
+    <div class="mt-4">
+        <p class="text-center">
+            Your Monthly EMI will be <span id="lblEmi"></span> per month
+        </p>
+    </div>
+</body>
+</html>

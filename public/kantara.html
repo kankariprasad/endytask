@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="styleshet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function BookClick(){
+            document.getElementById("lblMovie").innerHTML = document.getElementById("lstMovie").value;
+            document.getElementById("lblCinema").innerHTML = document.getElementById("lstCinema").value;
+            document.getElementById("lblDate").innerHTML = document.getElementById("lstDate").value;
+            document.getElementById("lblTime").innerHTML = document.getElementById("lstTime").value;
+            document.getElementById("lblSeats").innerHTML = document.getElementById("lstSeats").value;
+            var s = document.getElementById("lstSeats").value;
+            console.log(`Seats is ${typeof  parseInt(s)}`);
+
+            switch(document.getElementById("lstMovie").value) {
+                case "Kantara":
+                 document.getElementById("poster").src="../public/images/kantara.png";
+                 break;
+                case "Ram Setu":
+                 document.getElementById("poster").src = "../public/images/ram.png";
+                 break;
+            }
+        }
+        function MovieChange(){
+            var movieName = document.getElementById("lstMovie").value;
+            if(movieName!=""){
+                document.getElementById("lstCinema").disabled = false;
+            }
+        }
+    </script>
+    <style>
+        select:disabled {
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="mt-2 p-3 bg-dark d-flex justify-content-between">
+        <div>
+            <select id="lstMovie" onchange="MovieChange()" class="form-select w-100">
+                <option>Select Movie</option>
+                <option>Kantara</option>
+                <option>Ram Setu</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstCinema" disabled class="form-select w-100">
+                <option>Select Cinema</option>
+                <option>GVK One B'Hills</option>
+                <option>Styam Ameerpet</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstDate" disabled class="form-select w-100">
+                <option>Select Date</option>
+                <option>Today 1 Nov</option>
+                <option>2 November</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstTime" disabled class="form-select w-100">
+                <option>Select Time</option>
+                <option>10:45 AM</option>
+                <option>5:40 PM</option>
+            </select>
+        </div>
+        <div>
+            <select id="lstSeats" disabled class="form-select w-100">
+                <option>Select Seats</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+            </select>
+        </div>
+        <div>
+            <button onclick="BookClick()" disabled data-bs-target="#summary" data-bs-toggle="modal" class="btn btn-danger w-100">Book</button>
+        </div>
+    </div>
+    <div class="modal fade" id="summary">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Booking Summary</h2>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="card p-2">
+                        <img id="poster" class="card-img-top" height="160">
+                        <div class="card-body">
+                            <dl>
+                                <dt>Movie</dt>
+                                <dd id="lblMovie"></dd>
+                                <dt>Cinema</dt>
+                                <dd id="lblCinema"></dd>
+                                <dt>Date</dt>
+                                <dd id="lblDate"></dd>
+                                <dt>Show Time</dt>
+                                <dd id="lblTime"></dd>
+                                <dt>Seats</dt>
+                                <dd id="lblSeats"></dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+</body>
+</html>
